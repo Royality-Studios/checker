@@ -50,6 +50,9 @@ local function DoesExist(x)
 		return false
 	end
 end
+local function ReturnDataType(x)
+	return typeof(x)
+end
 return {
 	isPlayer = isPlayer,
 	isModel = isModel,
@@ -58,4 +61,5 @@ return {
 	InTable = InTable,
 	isAlive = isAlive,
 	DoesExist = DoesExist,
+	ReturnDataType = ReturnDataType,
 }

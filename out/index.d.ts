@@ -6,4 +6,5 @@ declare function InTable<T>(x: T[], y: T): boolean;
 declare const IsStudio: () => boolean;
 declare function isAlive(x: Player): boolean;
 declare function DoesExist(x: unknown): boolean;
-export { isPlayer, isModel, RunningOn, IsStudio, InTable, isAlive, DoesExist };
+declare function ReturnDataType(x: unknown): string;
+export { isPlayer, isModel, RunningOn, IsStudio, InTable, isAlive, DoesExist, ReturnDataType };
