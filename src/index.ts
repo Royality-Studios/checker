@@ -1,4 +1,5 @@
 const RunService = game.GetService("RunService");
+const Players = game.GetService("Players");
 
 function isPlayer(x: Player): boolean {
   if (classIs(x, "Player")) {
@@ -16,13 +17,9 @@ function isModel(x: Model): boolean {
   }
 }
 
-function RunningOn(): string {
-  if (RunService.IsClient()) {
-    return "client";
-  } else {
-    return "server";
-  }
-}
+const IsClient = () => RunService.IsClient();
+
+const IsServer = () => RunService.IsServer();
 
 function InTable<T>(x: T[], y: T): boolean {
   return x.includes(y);
@@ -55,4 +52,6 @@ function ReturnDataType(x: unknown): string {
   return typeOf(x);
 }
 
-export { isPlayer, isModel, RunningOn, IsStudio, InTable, isAlive, DoesExist, ReturnDataType };
+const IsEquipped = (x: Tool): boolean => (x.Parent === Players.LocalPlayer.Character ? true : false);
+
+export { isPlayer, isModel, IsServer, IsClient, IsStudio, InTable, isAlive, DoesExist, ReturnDataType, IsEquipped };
